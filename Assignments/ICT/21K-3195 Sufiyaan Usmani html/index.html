@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<style>
+		body{
+			margin: 0;
+			padding-left: 33em;
+			padding-top: 5em;
+		}
+		.main{
+			margin-right: 2em;
+			padding-left: 6em;
+			padding-top: 5em;
+			padding-right: 15em;
+		}
+		h2{
+			color: purple;
+			font-family: verdana;
+			opacity: 0.9;
+		}
+		input[type=email], input[type=password]{
+			width: 17em;
+			padding: 0.4em;
+			border-radius: 0.8em;
+			margin-top: 1em;
+		}
+		label{
+			font-size: 1.2em;
+			font-family: arial;
+		}
+		button{
+			margin-left: 1em;
+			margin-top: 1em;
+			margin-bottom: 1em;
+			padding-top: 0.7em;
+			padding-bottom: 0.7em;
+			padding-left: 5em;
+			padding-right: 5em;
+			background: rgb(170, 10, 170);
+			color: white;
+			border-radius: 1.2em;
+			font-size: 1em;
+		}
+		button:hover, img:hover{
+			opacity: 0.7;
+		}
+		text[class=or]{
+			padding-top: 2.2em;
+			font-size: 1.2em;
+		}
+		div[class=foot]{
+			padding-top: 1em;
+		}
+		span{
+			padding-left: 2em;
+		}
+		img{
+			padding-top: 2em;
+			max-width: 10%;
+			height: auto;
+		}
+		img[class=fb]{
+			padding-left: 6em;
+		}
+		div[class=sign]{
+			padding-left: 8.4em;
+		    font-size: 1.1em;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="main">
+		<h2 class="welcome">WELCOME BACK!</h2>
+		<form action="#">
+			<label for="e-mail">Email</label><br>
+			<input type="email" id="e-mail" placeholder="Enter your email"><br>
+			<br>
+			<label for="pass">Password</label><br>
+			<input type="password" id="pass" placeholder="Enter your password"><br>
+			<br>
+			<input type="checkbox">
+			<text class="remember-me"><b>Remember Me</b></text>
+			<text class="forgot-password">Forgot Password?</text>
+			<br>
+			<button><b>LOGIN</b></button>
+			<br>
+		</form>
+		<div class="foot">
+			<text>don't have an account?</text> 
+			<div class="sign">
+				<a href="signup.html" target="blank"><span>Sign up</span></a>
+			</div>
+			<br>
+			<br>
+			<text class="or">---------------- OR ----------------</text><br>
+			<div class="images">
+				<a href="http://google.com" target="blank"><img src="img/google.png" alt="google"></a>
+				<a href="http://facebook.com" target="blank"><img class="fb" src="img/facebook.png" alt="facebook"></a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

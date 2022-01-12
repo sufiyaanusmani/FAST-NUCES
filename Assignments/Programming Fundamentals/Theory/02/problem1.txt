@@ -1,0 +1,13 @@
+a: int because age can only be a whole number, not a decimal value
+
+b: double because speed of light is usually expressed in exponent and double is used to represent exp values
+
+c: char as gender can be one character, 'm' for male and 'f' for female
+
+d: float as coordinates can be a decimal values
+
+e: long int as factorial only works on integer values. It is long as factorials can get very large
+
+f: int because number of plants is always an integer 
+
+g: double as mass of electron is very small and decimal point so very high precision is needed to represent it 

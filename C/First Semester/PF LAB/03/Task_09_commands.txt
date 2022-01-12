@@ -1,0 +1,23 @@
+Task_09a
+
+gcc -E Task_09a.c
+
+gcc –S Task_09a.c
+
+gcc –c Task_09a.c
+
+gcc –o myTaska Task_09a.o
+
+myTaska
+
+Task_09b
+
+gcc -E Task_09b.c
+
+gcc –S Task_09b.c
+
+gcc –c Task_09b.c
+
+gcc –o myTaskb Task_09b.o
+
+myTaskb

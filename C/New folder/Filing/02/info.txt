@@ -1,0 +1,5 @@
+3195 Sufiyaan   Usmani     CS
+3210 Ahsan      Ashraf     AI
+3186 Qasim      Hasan      SE
+1234 M          Ali        CS
+12345 Sufiyaan   Usmani     CS

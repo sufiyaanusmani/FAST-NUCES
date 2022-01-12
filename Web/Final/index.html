@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body{
+            background: rgb(255, 255, 255);
+            margin: 0;
+        }
+        .main-heading{
+            color: #6c38f6;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            margin: 1em;
+            padding: 0.1em;
+            text-align: left;
+        }
+        .login-form, .options, .b{
+            color:#727171;
+            display: flex;
+            justify-content: center;
+            padding: 0.4em;
+        }
+        .button{
+            width: 11em;
+            height: 3em;
+            background: #6c38f6;
+            color: white;
+            font-size: 1.1em;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: bold;
+            border-radius: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-heading">
+        <h1>WELCOME BACK!</h1>
+    </div>
+    <div class="login-form">
+        <form action="#">
+            <label for="email">Email</label><br>
+            <input type="email" id="email"><br><br>
+            <label for="password">Password</label><br>
+            <input type="password" id="password">
+        </form>
+    </div>
+    <div class="options">
+        <input type="checkbox" id="remember">
+        <label for="remember">Remember Me</label>
+        <p>Forgot Password?</p>
+    </div>
+    <div class="b">
+        <input class="button" type="submit" id="button" value="LOGIN">
+    </div>
+    <div class="no-account">
+        <p>Don't have an account?</p>
+        <p>-------------- OR --------------</p>
+    </div>
+</body>
+</html>

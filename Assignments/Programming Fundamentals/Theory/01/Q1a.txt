@@ -1,0 +1,12 @@
+START
+corn_ear_in_mouth = PICK first_corn_ear
+DO
+   corn_ear_to_pick = SEARCH corn_ear
+   IF corn_ear_to_pick > corn_ear_in_mouth
+	THEN
+	    DROP corn_ear_in_mouth
+	    PICK corn_ear_to_pick
+	    corn_ear_in_mouth = corn_ear_to_pick
+   ENDIF
+WHILE meadow != FINISHED
+END

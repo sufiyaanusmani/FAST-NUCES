@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+
+    <style>
+        body{
+            background: linear-gradient(120deg, rgb(0, 26, 255), rgb(95, 2, 107));
+            height: 100vh;
+            overflow: hidden;
+        }
+        .main{
+            margin-left: 650px;
+            margin-top: 50px;
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background: rgba(0, 0, 0, 0.603);
+            width: 310px;
+            height: 450px;
+            padding-left: 60px;
+            padding-top: 30px;
+            border-radius: 10px;
+            box-shadow: 10px 10px 9px rgba(0, 0, 0, 0.534);
+        }
+        input{
+            width: 230px;
+            padding: 5px;
+        }
+        button{
+            width: 244px;
+            height: 50px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 25px;
+            background: linear-gradient(90deg, rgb(73, 3, 73), blue);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            cursor: pointer;
+            transition: background 1s;
+            box-shadow: 2px 2px 7px rgba(3, 78, 177, 0.705);
+        }
+        button:hover{
+            background: blue;
+        }
+        a{
+            color: red;
+            text-decoration: none;
+        }
+        h2{
+            margin-left: 60px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="main">
+        <h2>Sign Up</h2>
+        <form method="post">
+            <label>Name</label><br>
+            <input type="text" placeholder="Enter your name"><br><br>
+            <label>Date of Birth</label><br>
+            <input type="date"><br><br>
+            <label>Gender</label>&nbsp;&nbsp;
+            <select>
+                <option>Choose</option>
+                <option>Male</option>
+                <option>Female</option>
+            </select><br><br>
+            <label>Password</label><br>
+            <input type="password" placeholder="Enter your password">
+        </form>
+        <br>
+        <div class="signin">
+            Already a user? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Sign In</a>
+        </div><br>
+        <button>Login</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+START
+INPUT operator
+IF operator != 'q'
+   THEN
+	INPUT op1, op2
+	IF operator = '+'
+	   THEN
+		OUTPUT (op1 + op2)
+		sum = op1 + op2
+		sub = op2 - op1
+		IF sum > sub
+		   THEN
+			OUTPUT "sum is greater"
+		ELSE
+			OUTPUT "sub is greater"
+		ENDIF
+	ELSE IF operator = '-'
+	    THEN
+		OUTPUT (op2 - op1)
+		sub = op2 - op1
+		sum = op1 + op2
+		IF sum > sub
+		   THEN
+			OUTPUT "sum is greater"
+		ELSE
+			OUTPUT "sub is greater"
+		ENDIF
+	ELSE IF operator = '*'
+	    THEN
+		OUTPUT (op1 * op2)
+	ELSE IF operator = '/'
+	    THEN
+		IF op2 != 0
+		   THEN
+			OUTPUT (op1 / op2)
+		ELSE
+			OUTPUT "Invalid Operation"
+		ENDIF
+	ELSE
+		OUTPUT "Invalid Operation"
+	ENDIF
+ENDIF
+END
+	    
