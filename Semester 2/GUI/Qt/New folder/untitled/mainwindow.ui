@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>487</width>
+    <height>407</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -25,7 +25,6 @@
     </property>
     <property name="font">
      <font>
-      <family>Yu Gothic Medium</family>
       <pointsize>12</pointsize>
      </font>
     </property>
@@ -83,13 +82,26 @@
      <string>*</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>230</y>
+      <width>201</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>LOGIN</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>487</width>
      <height>21</height>
     </rect>
    </property>

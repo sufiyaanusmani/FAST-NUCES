@@ -17,6 +17,7 @@
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPlainTextEdit>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -30,6 +31,7 @@ public:
     QLabel *label_2;
     QPlainTextEdit *ID;
     QPlainTextEdit *password;
+    QPushButton *pushButton;
     QMenuBar *menubar;
     QMenu *menuFAST_NU;
     QStatusBar *statusbar;
@@ -38,32 +40,32 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(800, 600);
+        MainWindow->resize(487, 407);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(50, 100, 61, 21));
         QFont font;
-        font.setFamilies({QString::fromUtf8("Yu Gothic Medium")});
         font.setPointSize(12);
         label->setFont(font);
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(50, 160, 101, 21));
-        QFont font1;
-        font1.setPointSize(12);
-        label_2->setFont(font1);
+        label_2->setFont(font);
         ID = new QPlainTextEdit(centralwidget);
         ID->setObjectName(QString::fromUtf8("ID"));
         ID->setGeometry(QRect(150, 100, 201, 31));
         password = new QPlainTextEdit(centralwidget);
         password->setObjectName(QString::fromUtf8("password"));
         password->setGeometry(QRect(150, 160, 201, 31));
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(150, 230, 201, 51));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 21));
+        menubar->setGeometry(QRect(0, 0, 487, 21));
         menuFAST_NU = new QMenu(menubar);
         menuFAST_NU->setObjectName(QString::fromUtf8("menuFAST_NU"));
         MainWindow->setMenuBar(menubar);
@@ -87,6 +89,7 @@ public:
         ID->setPlaceholderText(QCoreApplication::translate("MainWindow", "*", nullptr));
         password->setPlainText(QString());
         password->setPlaceholderText(QCoreApplication::translate("MainWindow", "*", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "LOGIN", nullptr));
         menuFAST_NU->setTitle(QCoreApplication::translate("MainWindow", "FAST-NU", nullptr));
     } // retranslateUi
 
