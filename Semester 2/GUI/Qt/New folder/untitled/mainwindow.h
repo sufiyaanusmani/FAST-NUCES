@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "seconddialog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,5 +21,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    SecondDialog *sec;
 };
 #endif // MAINWINDOW_H

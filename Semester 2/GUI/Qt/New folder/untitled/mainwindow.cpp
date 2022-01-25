@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "string"
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -17,8 +17,16 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    string userName, pass;
-    userName = ui->ID;
-    pass = ui->password;
+    QString u = ui->username->text();
+    QString p = ui->pass->text();
+
+    if(u == "sufiyaan" && p == "123"){
+        QMessageBox::information(this, "Login", "Correct");
+        hide();
+        sec = new SecondDialog(this);
+        sec->show();
+    }else{
+        QMessageBox::warning(this, "Login", "Not Correct");
+    }
 }
 
