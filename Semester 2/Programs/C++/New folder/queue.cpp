@@ -1,90 +1,118 @@
 #include <iostream>
 #include <stdlib.h>
-#define SIZE 5
+#include <conio.h>
 using namespace std;
+#define SIZE 5
 
 class Queue{
     private:
-        int q[SIZE];
+        int arr[SIZE];
         int in, out;
         bool isEmpty, isFull;
-        int inc(int);
-    public:
-        Queue();
-        void enqueue(int);
-        int dequeue();
-        void printQueue();
+        int increment(int);
+        public:
+            Queue();
+            void display();
+            void enqueue(int);
+            int dequeue(); 
 };
 
 int main(){
     Queue q;
-    q.enqueue(1);
-    q.enqueue(22);
-    q.enqueue(55);
-    q.enqueue(66);
-    q.enqueue(99);
-    q.printQueue();
-    cout << q.dequeue() << endl;
-    q.printQueue();
-    cout << q.dequeue() << endl;
-    q.printQueue();
-    cout << q.dequeue() << endl;
-    q.printQueue();
+    int choice, val;
+    while(1){
+        system("cls");
+        cout << "1 - Enqueue" << endl;
+        cout << "2 - Dequeue" << endl;
+        cout << "3 - Exit" << endl << endl;
+        cout << "Enter your choice: ";
+        cin >> choice;
+        switch(choice){
+            case 1:
+                system("cls");
+                cout << "Enter value to enqueue: ";
+                cin >> val;
+                q.enqueue(val);
+                q.display();
+                getch();
+                break;
+            case 2:
+                system("cls");
+                val = q.dequeue();
+                cout << "Value dequeued: " << val << endl;
+                q.display();
+                getch();
+                break;
+            case 3:
+                exit(0);
+                break;
+            default:
+                cout << "Wrong choice entered" << endl;
+                break;
+        }
+    }
     return 0;
 }
 
 Queue::Queue(){
     int i;
     for(i=0;i<SIZE;i++){
-        q[i] = 0;
+        arr[i] = -1;
     }
-    in = out = 0;
+    in = 0;
+    out = 0;
     isEmpty = true;
     isFull = false;
 }
 
-int Queue::inc(int val){
-    if(val == SIZE - 1){
-        val = 0;
-    }else{
-        val = val + 1;
+void Queue::display(){
+    int i;
+    cout << "Current Queue: ";
+    for(i=0;i<SIZE;i++){
+        if(arr[i] != -1){
+            cout << arr[i] << "   ";
+        }
     }
-    return val;
+        cout << endl;
 }
 
-void Queue::enqueue(int val){
-    if(isFull == true){
-        throw "Queue is full";
-        exit(1);
+int Queue::increment(int index){
+    if(index == SIZE - 1){
+        index = 0;
+    }else{
+        index = index + 1;
     }
-    
-    q[in] = val;
-    in = inc(in);
+    return index;
+}
 
-    if(in == out){
-        isFull = true;
+void Queue::enqueue(int num){
+    if(isFull == true){
+        cout << "\aQueue is currently full, can not enqueue current item" << endl;
+        return;
+    }else{
+        arr[in] = num;
+        in = increment(in);
+        
+        if(in == out){
+            isFull = true;
+        }
+        isEmpty = false;
     }
-    isEmpty = false;
 }
 
 int Queue::dequeue(){
+    int val;
     if(isEmpty == true){
-        throw "Queue is empty";
+        cout << "\aQueue is currently empty" << endl;
         exit(1);
+    }else{
+        val = arr[out];
+        arr[out] = -1;
+        out = increment(out);
+        if(in == out){
+            isEmpty = true;
+        }
+        isFull = false;
+        return val;
     }
-    int ret = q[out];
-    out = inc(out);
-    if(in == out){
-        isEmpty = true;
-    }
-    isFull = false;
-    return ret;
-}
-
-void Queue::printQueue(){
-    int i;
-    for(i=0;i<SIZE;i++){
-        cout << q[i] << "  ";
-    }
-    cout << endl;
 }
