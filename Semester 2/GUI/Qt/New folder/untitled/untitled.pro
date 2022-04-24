@@ -1,4 +1,5 @@
-QT       += core gui
+QT       += core gui \
+    quick
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -11,11 +12,13 @@ CONFIG += c++11
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    seconddialog.cpp
+    seconddialog.cpp \
+    user.cpp
 
 HEADERS += \
     mainwindow.h \
-    seconddialog.h
+    seconddialog.h \
+    user.h
 
 FORMS += \
     mainwindow.ui \

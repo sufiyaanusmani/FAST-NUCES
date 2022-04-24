@@ -1,0 +1,4 @@
+﻿  LoginForm.cpp
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
+  Generating Code...
+LINK : fatal error LNK1104: cannot open file 'ucrtd.lib'

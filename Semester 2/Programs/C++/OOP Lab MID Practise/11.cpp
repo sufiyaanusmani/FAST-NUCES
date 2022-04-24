@@ -1,0 +1,1 @@
+// Create an Account class that a bank might use to represent customers bank accounts. Include a data member to represent the account balance. Provide three member functions. Member function credit should add an amount to the current balance. Member function debit should withdraw money from the Account. Member function get Balance should return the current balance.

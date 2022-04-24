@@ -317,8 +317,13 @@ Makefile: ../untitled/untitled.pro C:/Qt/6.2.2/mingw_64/mkspecs/win32-g++/qmake.
 		C:/Qt/6.2.2/mingw_64/mkspecs/features/yacc.prf \
 		C:/Qt/6.2.2/mingw_64/mkspecs/features/lex.prf \
 		../untitled/untitled.pro \
+		C:/Qt/6.2.2/mingw_64/lib/Qt6Quick.prl \
+		C:/Qt/6.2.2/mingw_64/lib/Qt6OpenGL.prl \
 		C:/Qt/6.2.2/mingw_64/lib/Qt6Widgets.prl \
 		C:/Qt/6.2.2/mingw_64/lib/Qt6Gui.prl \
+		C:/Qt/6.2.2/mingw_64/lib/Qt6QmlModels.prl \
+		C:/Qt/6.2.2/mingw_64/lib/Qt6Qml.prl \
+		C:/Qt/6.2.2/mingw_64/lib/Qt6Network.prl \
 		C:/Qt/6.2.2/mingw_64/lib/Qt6Core.prl \
 		C:/Qt/6.2.2/mingw_64/lib/Qt6EntryPoint.prl \
 		C:/Qt/6.2.2/mingw_64/mkspecs/features/build_pass.prf
@@ -570,8 +575,13 @@ C:/Qt/6.2.2/mingw_64/mkspecs/features/exceptions.prf:
 C:/Qt/6.2.2/mingw_64/mkspecs/features/yacc.prf:
 C:/Qt/6.2.2/mingw_64/mkspecs/features/lex.prf:
 ../untitled/untitled.pro:
+C:/Qt/6.2.2/mingw_64/lib/Qt6Quick.prl:
+C:/Qt/6.2.2/mingw_64/lib/Qt6OpenGL.prl:
 C:/Qt/6.2.2/mingw_64/lib/Qt6Widgets.prl:
 C:/Qt/6.2.2/mingw_64/lib/Qt6Gui.prl:
+C:/Qt/6.2.2/mingw_64/lib/Qt6QmlModels.prl:
+C:/Qt/6.2.2/mingw_64/lib/Qt6Qml.prl:
+C:/Qt/6.2.2/mingw_64/lib/Qt6Network.prl:
 C:/Qt/6.2.2/mingw_64/lib/Qt6Core.prl:
 C:/Qt/6.2.2/mingw_64/lib/Qt6EntryPoint.prl:
 C:/Qt/6.2.2/mingw_64/mkspecs/features/build_pass.prf:
