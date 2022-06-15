@@ -1,0 +1,243 @@
+// Name: Sufiyaan Usmani
+// Roll No: 21K-3195
+// Section: BCS-2J
+
+
+// Question 1:
+
+#include <iostream>
+#include <string>
+#include <fstream>
+using namespace std;
+
+int main(){
+	string str;
+	str = "This is a string";
+	ofstream fout;
+	fout.open("Q1.txt", ios::out);
+	int length = str.length();
+	cout << "String length: " << length << endl;
+	fout << str << endl;
+	cout << "Writing to file..." << endl;
+	cout << "Data written successfully" << endl;
+	cout << "Now reading from file..." << endl << endl;
+	fout.close();
+	
+	ifstream fin;
+	string fstr;
+	fin.open("Q1.txt", ios::in);
+	if(!fin){
+		cout << "File reading error" << endl;
+	}else{
+		while(fin.eof() == 0){
+			getline(fin, str);
+			cout << str;
+		}	
+	}
+	fin.close();
+}
+
+
+// Question 2
+
+#include <iostream>
+#include <string>
+#include <fstream>
+using namespace std;
+
+int main(){
+	// file2: when program runs, new file(file2) will be created and data of file1 will be copied to file2
+	ifstream fin;
+	ofstream fout;
+	string str, sampleString;
+	
+	// creating file1.txt
+	sampleString = "Object Oriented Programming - Hello World";
+	fout.open("file1.txt", ios::out);
+	fout << sampleString;
+	fout.close();
+	
+	fin.open("file1.txt", ios::in);
+	if(!fin){
+		cout << "File reading error" << endl;
+	}else{
+		fout.open("file2.txt", ios::out);
+		while(fin.eof() == 0){
+			getline(fin, str);
+			fout << str;
+		}
+		fout.close();
+	}
+	fin.close();
+	cout << "Data copied successfully" << endl << endl;
+	cout << "Reading data from copied file..." << endl << endl;
+	
+	fin.open("file2.txt", ios::in);
+	if(!fin){
+		cout << "File reading error" << endl;
+	}else{
+		while(fin.eof() == 0){
+			getline(fin, str);
+			cout << str;
+		}
+		fout.close();
+	}
+	return 0;
+}
+
+
+// Question 3
+
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <string.h>
+#include <iomanip>
+using namespace std;
+
+class Person{
+	private:
+		char name[30];
+		int age;
+	public:
+		Person(){
+			
+		}
+		Person(char n[30], int age){
+			strcpy(name, n);
+			this->age = age;
+		}
+		void storeData(){
+			ofstream fout;
+			fout.open("person.dat", ios::out|ios::binary);
+			fout.write((char*)this, sizeof(*this));
+			fout.close();
+			cout << "Data stored successfully" << endl << endl;
+		}
+		void readData(){
+			Person temp;
+			ifstream fin;
+			fin.open("person.dat", ios::in|ios::binary);
+			if(!fin){
+				cout << "Error" << endl;
+			}else{
+				fin.read((char*)&temp, sizeof(temp));
+				while(fin.eof() == 0){
+					cout << "Name: " << temp.name << endl;
+					cout << "Age: " << temp.age << endl << endl;
+					fin.read((char*)&temp, sizeof(temp));
+				}
+			}
+			fin.close();
+		}
+};
+
+int main(){
+	// File contains data of only one object (mentioned in questions)
+	Person p1("Sufiyaan Usmani", 18);
+	p1.storeData();
+	p1.readData();
+}
+
+
+// Question 4
+
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <string.h>
+#include <iomanip>
+using namespace std;
+
+class Participant{
+	private:
+		int ID;
+		char name[30];
+		float score;
+	public:
+		Participant(){
+			
+		}
+		Participant(int ID, char n[30], float score){
+			this->ID = ID;
+			strcpy(name, n);
+			this->score = score;
+		}
+		void input(){
+			ofstream fout;
+			fout.open("participant.dat", ios::app|ios::binary);
+			fout.write((char*)this, sizeof(*this));
+			fout.close();
+			cout << "Data stored successfully" << endl;
+		}
+		static void output(int idToSearch){		// this does not belong to any object as searching will be done for all objects stored in the file
+			ifstream fin;
+			int id;
+			Participant temp;
+			bool found = false;
+			fin.open("participant.dat", ios::in|ios::binary);
+			if(!fin){
+				cout << "Error" << endl;
+			}else{
+				fin.read((char*)&temp, sizeof(temp));
+				while(fin.eof() == 0){
+					if(idToSearch == temp.ID){
+						temp.displayParticipant();
+						found = true;
+						break;
+					}
+					fin.read((char*)&temp, sizeof(temp));
+				}
+			}
+			fin.close();
+			if(found == false){
+				cout << "No data found" << endl;
+			}
+		}
+		void displayParticipant(){
+			cout << "ID: " << ID << endl;
+			cout << "Name: " << name << endl;
+			cout << "Score: " << score << endl;
+		}
+		static float max(){
+			ifstream fin;
+			Participant temp;
+			float maximum = -999;
+			fin.open("participant.dat", ios::in|ios::binary);
+			if(!fin){
+				cout << "File reading error" << endl;
+			}else{
+				fin.read((char*)&temp, sizeof(temp));
+				while(fin.eof() == 0){
+					if(temp.score > maximum){
+						maximum = temp.score;
+					}
+					fin.read((char*)&temp, sizeof(temp));
+				}
+			}
+			fin.close();
+			return maximum;
+		}
+};
+
+int main(){
+	// creating objects
+	Participant p1(123, "Sufiyaan Usmani", 4.0);
+	Participant p2(456, "Ahsan Ashraf", 3.6);
+	Participant p3(789, "Qasim Hasan", 3.1);
+	
+	// storing objects in file
+	p1.input();
+	p2.input();
+	p3.input();
+	cout << endl;
+	
+	// searching data
+	cout << "Searching ID: 123" << endl;
+	Participant::output(123);
+	cout << endl;
+	
+	// max score
+	cout << "Maximum Score: " << Participant::max() << endl;
+	return 0;
+}
